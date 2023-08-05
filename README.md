@@ -1,4 +1,4 @@
-# GraphQL-Based Blog System - ReadMe
+# GraphQL-Based Blog System - Laravel
 
 Welcome to the GraphQL-Based Blog System, a full-featured and feature-rich blog application developed in Laravel 10 and PHP 8.2. This application leverages GraphQL instead of a traditional RESTful API to provide a more flexible and efficient way of fetching data.
 
