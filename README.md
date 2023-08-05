@@ -28,12 +28,12 @@ To run this blog system, you need the following software and tools installed on 
 ## Installation
 
 - Clone the repository or download the source code.
-- Run composer install to install the required dependencies.
+- Run `composer install` to install the required dependencies.
 - Create a new MySQL database for the blog system.
 - Copy the `.env.example` file to `.env` and configure your database connection settings.
-- Run php artisan key:generate to generate an application key.
-- Run php artisan migrate to create the necessary database tables.
-- (Optional) Run php artisan db:seed to populate some sample data.
+- Run `php key.php` to generate an application key.
+- Run `php migrate.php` to create the necessary database tables.
+- (Optional) Run `php seed.php` to populate some sample data.
 
 ## Configuration
 
