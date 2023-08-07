@@ -1,0 +1,8 @@
+extend type Query {
+  users: [User!]! @paginate
+}
+
+extend type Mutation {
+  login(email: String! @rules(apply: ["email"]), password: String! @rules(apply:["min:8"])): String
+  register(name: String!, username: String! @rules(apply: ["unique:users"]), password: String! @rules(apply: ["min:8"]), email: String! @rules(apply: ["email", "unique:users"])): User! @create
+}

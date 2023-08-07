@@ -1,65 +1,8 @@
-type User {
-  id: ID!
-  name: String!
-  username: String!
-  email: String!
-  email_verified_at: String
-  password: String!
-  created_at: String!
-  updated_at: String!
-  posts: [Post]! @hasMany
-}
-
-
-type Category {
-  id: ID!
-  name: String!
-  description: String!
-  created_at: String
-  updated_at: String
-}
-
-type Post {
-  id: ID!
-  title: String!
-  content: String!
-  author: User! @belongsTo
-  category: Category! @belongsTo
-  likes: Int!
-  views: Int!
-  isPublished: Boolean!
-  created_at: String
-  updated_at: String
-}
-
-type Tag {
-  id: ID!
-  name: String!
-  description: String!
-  created_at: String
-  updated_at: String
-}
-
-type Notification {
-  id: ID!
-  message: String!
-  user: User!
-  created_at: String
-}
-
-type Comment {
-  id: ID!
-  content: String!
-  user: User!
-  created_at: String
-  updated_at: String
-}
-
-type Query {
-  users: [User!]! @all
-}
-
-
-type Mutation {
-
-}
+#import types.graphql
+#import auth.graphql
+#import category.graphql
+#import comment.graphql
+#import notification.graphql
+#import post.graphql
+#import tag.graphql
+#import user.graphql
