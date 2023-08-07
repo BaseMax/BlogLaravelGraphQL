@@ -55,13 +55,195 @@ The application will be accessible at `http://localhost:8000` by default. You ca
 **Queries:**
 
 - Get all blog posts: Retrieve a list of all blog posts with their titles and dates.
+```graphql
+query {
+  posts {
+    title
+    content
+    author {
+      username
+    }
+    created_at
+    updated_at
+  }
+}
+```
+
+```json
+{
+  "data": {
+    "posts": [
+      {
+        "title": "pizza",
+        "content": "here we want to learn how make a pizza.",
+        "author": {
+          "username": "AliAhmadi"
+        },
+        "created_at": null,
+        "updated_at": null
+      }
+    ]
+  }
+}
+```
 - Get a single blog post: Retrieve detailed information about a specific blog post by its ID.
+```graphql
+query {
+  post(id: 2) {
+    id
+    title
+    content
+    created_at
+    updated_at
+    author {
+      name
+      username
+      email
+    }
+  }
+}
+```
+```json
+{
+  "data": {
+    "post": {
+      "id": "2",
+      "title": "pizza",
+      "content": "here we want to learn how make a pizza.",
+      "created_at": null,
+      "updated_at": null,
+      "author": {
+        "name": "Ali",
+        "username": "AliAhmadi",
+        "email": "aliahmadi82c@gmail.com"
+      }
+    }
+  }
+}
+```
 - Search blog posts: Search for blog posts based on keywords and retrieve a list of matching posts.
+```graphql
+query {
+  search(key: "pizza") {
+    id
+    title
+    content
+    created_at
+    updated_at
+    category {
+      description
+    }
+  }
+}
+```
+```json
+{
+  "data": {
+    "search": [
+      {
+        "id": "2",
+        "title": "pizza",
+        "content": "here we want to learn how make a pizza.",
+        "created_at": null,
+        "updated_at": null,
+        "category": {
+          "description": "posts related to food world"
+        }
+      }
+    ]
+  }
+}
+```
 - Get all categories: Retrieve a list of all blog categories.
+```graphql
+query {
+  categories {
+    id
+    name
+    description
+    created_at
+    updated_at
+    __typename
+  }
+}
+```
+```json
+{
+  "data": {
+    "categories": [
+      {
+        "id": "1",
+        "name": "food",
+        "description": "posts related to food world",
+        "created_at": null,
+        "updated_at": null,
+        "__typename": "Category"
+      }
+    ]
+  }
+}
+```
 - Get all tags: Retrieve a list of all blog tags.
-- Get recent posts: Retrieve a list of the most recent blog posts.
+```graphql
+query {
+  tags {
+    id
+    name
+    description
+    created_at
+    updated_at
+    __typename
+  }
+}
+```
+```json
+{
+  "data": {
+    "tags": []
+  }
+}
+```
 - Get popular posts: Retrieve a list of the most popular blog posts based on views or comments.
-- Get comments for a post: Retrieve all comments associated with a specific blog post.
+```graphql
+query {
+  popularPosts {
+    id
+    title
+    content
+    author {
+      username
+      email
+    }
+    likes
+    views
+    isPublished
+    created_at
+    updated_at
+  }
+}
+```
+```json
+{
+  "data": {
+    "popularPosts": [
+      {
+        "id": "2",
+        "title": "pizza",
+        "content": "here we want to learn how make a pizza.",
+        "author": {
+          "username": "AliAhmadi",
+          "email": "aliahmadi82c@gmail.com"
+        },
+        "likes": 34,
+        "views": 2974,
+        "isPublished": true,
+        "created_at": null,
+        "updated_at": null
+      }
+    ]
+  }
+}
+```
 - Get user profile: Retrieve information about the currently logged-in user.
 - Get user's own posts: Retrieve a list of blog posts created by the currently logged-in user.
 - Get user's favorite posts: Retrieve a list of blog posts marked as favorites by the currently logged-in user.
