@@ -1,5 +1,5 @@
 extend type Query {
-    posts: [Post!]! @all
+    posts: [Post!]! @paginate
     post(id: ID! @eq): Post @find
     search(key: String!): [Post]!
     popularPosts: [Post]! 

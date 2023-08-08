@@ -1,4 +1,4 @@
 extend type Query {
-    tags: [Tag!]! @all
+    tags: [Tag!]! @paginate
     tag(id: ID! @eq): Tag @find
 }
