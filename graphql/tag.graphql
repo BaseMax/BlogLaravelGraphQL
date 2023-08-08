@@ -2,3 +2,9 @@ extend type Query {
     tags: [Tag!]! @paginate
     tag(id: ID! @eq): Tag @find
 }
+
+extend type Mutation {
+    createTag(name: String! @eq, description: String!): Tag! @guard @create
+    updateTag(id: ID! @eq, name: String, description: String): Tag @guard @update
+    deleteTag(id: ID! @eq): Tag @guard @delete
+}
