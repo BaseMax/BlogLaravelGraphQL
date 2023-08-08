@@ -1,0 +1,3 @@
+extend type Mutation {
+    createComment(content: String!): Comment! @guard
+}

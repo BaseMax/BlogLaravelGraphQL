@@ -14,4 +14,16 @@ extend type Mutation {
         content: String!,
         category: Int!,
         ): Post! @guard
+    
+    updatePost(
+        id: ID! @eq,
+        title: String,
+        content: String,
+        category: Int,
+        isPublished: Boolean,
+        likes: Int,
+        views: Int
+    ): Post @update @guard
+
+    deletePost(id: ID!): Post @guard @delete
 }
