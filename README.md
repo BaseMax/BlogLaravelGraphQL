@@ -31,9 +31,7 @@ To run this blog system, you need the following software and tools installed on 
 - Run `composer install` to install the required dependencies.
 - Create a new MySQL database for the blog system.
 - Copy the `.env.example` file to `.env` and configure your database connection settings.
-- Run `php key.php` to generate an application key.
-- Run `php migrate.php` to create the necessary database tables.
-- (Optional) Run `php seed.php` to populate some sample data.
+- Run `php artisan migrate` to create the necessary database tables.
 
 ## Configuration
 
@@ -47,8 +45,7 @@ To run the blog system, use the following command:
 ```
 php artisan serve
 ```
-
-The application will be accessible at `http://localhost:8000` by default. You can access the GraphQL playground at `http://localhost:8000/graphql-playground` to interact with the API.
+Now open `http://localhost:8000/graphiql`. this is a environment for running graphql queries and get response. in below window you can add Authorization token(you can get that after login or register) and dont forget to add `Content-Type: application/json` header.
 
 ## GraphQL
 
