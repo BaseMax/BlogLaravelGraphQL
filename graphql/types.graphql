@@ -8,6 +8,7 @@ type User {
   created_at: String!
   updated_at: String!
   posts: [Post]! @hasMany
+  notifications: [Notification]! @hasMany
 }
 
 
@@ -39,6 +40,7 @@ type Tag {
   description: String!
   created_at: String
   updated_at: String
+  posts: [Post]! @hasMany
 }
 
 type Notification {

@@ -3,5 +3,6 @@ extend type Query {
     post(id: ID! @eq): Post @find
     search(key: String!): [Post]! @all
     popularPosts: [Post]! @all
-    myPosts: [Post]! @guard
+    # myPosts: [Post]! @guard
+    postsByLike(likes: Int! @eq): [Post] @find
 }

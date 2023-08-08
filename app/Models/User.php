@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class, "author");
     }
+
+    public function notifications(): HasMany
+    {
+        return $this->hasMany(Notification::class, "user_id");
+    }
 }
