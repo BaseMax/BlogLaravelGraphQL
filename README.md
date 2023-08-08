@@ -35,8 +35,8 @@ To run this blog system, you need the following software and tools installed on 
 
 ## Configuration
 
-- Customization: The application is highly customizable. You can modify views, styles, and GraphQL schema to suit your needs.
-- Environment Variables: The .env file contains various environment variables to control the behavior of the application. Make sure to configure them correctly.
+- Customization: The application is highly customizable. You can modify views, styles, and **GraphQL** schema to suit your needs.
+- Environment Variables: The `.env` file contains various environment variables to control the behavior of the application. Make sure to configure them correctly.
 
 ## Usage
 
@@ -45,6 +45,7 @@ To run the blog system, use the following command:
 ```
 php artisan serve
 ```
+
 Now open `http://localhost:8000/graphiql`. this is a environment for running graphql queries and get response. in below window you can add Authorization token(you can get that after login or register) and dont forget to add `Content-Type: application/json` header.
 
 ## GraphQL
@@ -52,6 +53,7 @@ Now open `http://localhost:8000/graphiql`. this is a environment for running gra
 **Queries:**
 
 - Get all blog posts: Retrieve a list of all blog posts with their titles and dates.
+
 ```graphql
 query {
   posts {
@@ -83,7 +85,9 @@ query {
   }
 }
 ```
+
 - Get a single blog post: Retrieve detailed information about a specific blog post by its ID.
+
 ```graphql
 query {
   post(id: 2) {
@@ -100,6 +104,7 @@ query {
   }
 }
 ```
+
 ```json
 {
   "data": {
@@ -118,7 +123,9 @@ query {
   }
 }
 ```
+
 - Search blog posts: Search for blog posts based on keywords and retrieve a list of matching posts.
+
 ```graphql
 query {
   search(key: "pizza") {
@@ -151,7 +158,9 @@ query {
   }
 }
 ```
+
 - Get all categories: Retrieve a list of all blog categories.
+
 ```graphql
 query {
   categories {
@@ -164,6 +173,7 @@ query {
   }
 }
 ```
+
 ```json
 {
   "data": {
@@ -180,7 +190,9 @@ query {
   }
 }
 ```
+
 - Get all tags: Retrieve a list of all blog tags.
+
 ```graphql
 query {
   tags {
@@ -193,6 +205,7 @@ query {
   }
 }
 ```
+
 ```json
 {
   "data": {
@@ -200,7 +213,9 @@ query {
   }
 }
 ```
+
 - Get popular posts: Retrieve a list of the most popular blog posts based on views or comments.
+
 ```graphql
 query {
   popularPosts {
@@ -219,6 +234,7 @@ query {
   }
 }
 ```
+
 ```json
 {
   "data": {
@@ -241,6 +257,7 @@ query {
   }
 }
 ```
+
 - Get user profile: Retrieve information about the currently logged-in user.
 - Get user's own posts: Retrieve a list of blog posts created by the currently logged-in user.
 - Get user's favorite posts: Retrieve a list of blog posts marked as favorites by the currently logged-in user.
