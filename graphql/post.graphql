@@ -1,0 +1,7 @@
+extend type Query {
+    posts: [Post!]! @all
+    post(id: ID! @eq): Post @find
+    search(key: String!): [Post]! @all
+    popularPosts: [Post]! @all
+    myPosts: [Post]! @guard
+}

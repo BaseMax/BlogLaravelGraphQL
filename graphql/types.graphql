@@ -17,6 +17,7 @@ type Category {
   description: String!
   created_at: String
   updated_at: String
+  posts: [Post]! @hasMany
 }
 
 type Post {

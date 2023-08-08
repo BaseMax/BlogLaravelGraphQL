@@ -1,8 +1,9 @@
 extend type Query {
-  me: User! @auth
+  me: User! @guard @auth
 }
 
 extend type Mutation {
-  login(email: String! @rules(apply: ["email"]), password: String! @rules(apply:["min:8"])): String
+  login(email: String! @rules(apply: ["email"]), password: String! @rules(apply:["min:8"])): String!
   register(name: String!, username: String! @rules(apply: ["unique:users"]), password: String! @rules(apply: ["min:8"]), email: String! @rules(apply: ["email", "unique:users"])): User! @create
+  deleteAcount(email: String! @rules(apply: ["email"]), password: String! @rules(apply: ["min:8"])): User!
 }

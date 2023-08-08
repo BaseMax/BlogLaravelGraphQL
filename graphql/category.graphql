@@ -1,0 +1,4 @@
+extend type Query {
+    categories: [Category!]! @all
+    category(id: ID! @eq): Category @find
+}
