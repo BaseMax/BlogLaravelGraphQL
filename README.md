@@ -431,4 +431,9 @@ We welcome contributions from the community. If you want to contribute to the pr
 
 The GraphQL-Based Blog System is open-source software released under the MIT License. See the LICENSE file for more information.
 
-Copyright 2023, Max Base, Ali Ahmadi
+## Authors
+
+- Ali
+- Max
+
+Copyright 2023, Max Base
