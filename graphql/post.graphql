@@ -7,3 +7,11 @@ extend type Query {
     postsByLike(likes: Int! @eq): [Post] @find
     countOfPosts: Int!
 }
+
+extend type Mutation {
+    createPost(
+        title: String!,
+        content: String!,
+        category: Int!,
+        ): Post! @guard
+}
