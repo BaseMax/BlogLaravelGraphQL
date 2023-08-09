@@ -429,7 +429,7 @@ We welcome contributions from the community. If you want to contribute to the pr
 
 ## License
 
-The GraphQL-Based Blog System is open-source software released under the MIT License. See the LICENSE file for more information.
+The GraphQL-Based Blog System is open-source software released under the GPL-3.0 License. See the LICENSE file for more information.
 
 ## Authors
 
