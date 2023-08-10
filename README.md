@@ -275,16 +275,9 @@ query {
 Headers:
 
 ```json
-query {
-  me {
-    id
-    email
-    password
-    username
-    posts {
-      title
-    }
-  }
+{
+  "Authorization": "Bearer 7|SFHqazMxgtULjxDJx40qtdQomwYpIOYiKARXvdZP",
+  "Accept": "application/json"
 }
 ```
 - Get user's own posts: Retrieve a list of blog posts created by the currently logged-in user.
