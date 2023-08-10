@@ -259,7 +259,65 @@ query {
 ```
 
 - Get user profile: Retrieve information about the currently logged-in user.
+```graphql
+query {
+  me {
+    id
+    email
+    password
+    username
+    posts {
+      title
+    }
+  }
+}
+```
+Headers:
+
+```json
+query {
+  me {
+    id
+    email
+    password
+    username
+    posts {
+      title
+    }
+  }
+}
+```
 - Get user's own posts: Retrieve a list of blog posts created by the currently logged-in user.
+```graphql
+query {
+  me {
+    posts {
+      title
+      content
+      category {
+        name
+      }
+    }
+  }
+}
+```
+```json
+{
+  "data": {
+    "me": {
+      "posts": [
+        {
+          "title": "moon and mars",
+          "content": "i want to be first person walked throught mars",
+          "category": {
+            "name": "food"
+          }
+        }
+      ]
+    }
+  }
+}
+```
 - Get user's favorite posts: Retrieve a list of blog posts marked as favorites by the currently logged-in user.
 - Get recommended posts: Retrieve a list of recommended blog posts based on user preferences or behavior.
 - Get posts by category: Retrieve all blog posts belonging to a specific category.
