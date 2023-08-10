@@ -312,17 +312,153 @@ query {
 }
 ```
 - Get user's favorite posts: Retrieve a list of blog posts marked as favorites by the currently logged-in user.
-- Get recommended posts: Retrieve a list of recommended blog posts based on user preferences or behavior.
+```graphql
+query {
+  myFavorites {
+    post {
+      title
+    }
+  }
+}
+```
+```json
+{
+  "data": {
+    "myFavorites": []
+  }
+}
+```
 - Get posts by category: Retrieve all blog posts belonging to a specific category.
+```graphql
+query {
+  category(id: 1) {
+    posts {
+      title
+      content
+      likes
+      views
+      isPublished
+    }
+  }
+}
+```
+```json
+{
+  "data": {
+    "category": {
+      "posts": [
+        {
+          "title": "pizza",
+          "content": "here we want to learn how make a pizza.",
+          "likes": 34,
+          "views": 2974,
+          "isPublished": true
+        },
+        {
+          "title": "moon and mars",
+          "content": "i want to be first person walked throught mars",
+          "likes": 0,
+          "views": 0,
+          "isPublished": true
+        }
+      ]
+    }
+  }
+}
+```
 - Get posts by tag: Retrieve all blog posts associated with a specific tag.
+```graphql
+query {
+  tag(id: 1) {
+    name
+    description
+    posts {
+      id
+      title
+      content
+      category {
+        name
+      }
+      likes
+      views
+    }
+  }
+}
+```
+```json
+{
+  "data": {
+    "tag": null
+  }
+}
+```
 - Get total number of posts: Retrieve the total number of blog posts in the system.Get posts by author: Retrieve all blog posts written by a specific author.
+```graphql
+query {
+  countOfPosts
+}
+```
+```json
+{
+  "data": {
+    "countOfPosts": 2
+  }
+}
+```
 - Get user by ID: Retrieve detailed information about a user by their ID.
-- Get trending tags: Retrieve a list of the most popular tags used in blog posts.
-- Get related posts: Retrieve a list of related blog posts based on the current post's tags or category.
-- Get post comments count: Retrieve the total number of comments for a specific blog post.
+```graphql
+query {
+  user(id: 2) {
+    name
+    username
+    email
+    email_verified_at
+  }
+}
+```
+```json
+{
+  "data": {
+    "user": {
+      "name": "Ali",
+      "username": "AliAhmadi",
+      "email": "aliahmadi82c@gmail.com",
+      "email_verified_at": null
+    }
+  }
+}
+```
 - Get user activity: Retrieve a user's recent activity, including posts created, comments made, and liked posts.
 - Get most active users: Retrieve a list of the most active users based on the number of posts and comments they've made.
 - Get user notifications: Retrieve a list of notifications for the currently logged-in user.
+```graphql
+query {
+  user(id: 2) {
+    name
+    username
+    email
+    email_verified_at
+    notifications {
+      id
+      message
+      created_at
+    }
+  }
+}
+```
+```json
+{
+  "data": {
+    "user": {
+      "name": "Ali",
+      "username": "AliAhmadi",
+      "email": "aliahmadi82c@gmail.com",
+      "email_verified_at": null,
+      "notifications": []
+    }
+  }
+}
+```
 - Get posts by date range: Retrieve blog posts published within a specified date range.
 - Get posts by popularity: Retrieve blog posts sorted by popularity (e.g., based on likes, views, or comments).
 - Get posts by user's location: Retrieve blog posts based on the user's geolocation or specified location filter.
