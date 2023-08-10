@@ -9,6 +9,7 @@ type User {
   updated_at: String!
   posts: [Post]! @hasMany
   notifications: [Notification]! @hasMany
+  favorites: [Favorit] @hasMany
 }
 
 
@@ -54,6 +55,14 @@ type Comment {
   id: ID!
   content: String!
   user: User!
+  created_at: String
+  updated_at: String
+}
+
+type Favorite {
+  id: ID!
+  user: User! @belongsTo
+  post: Post!
   created_at: String
   updated_at: String
 }
